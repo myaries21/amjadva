@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { Facebook, Mail, ChevronDown, MessageCircle, Linkedin, Instagram } from 'lucide-react';
+import { FiverrIcon } from './FiverrIcon';
 
 const Hero = () => {
   const colors = ['#60A5FA', '#818CF8', '#A78BFA', '#C084FC', '#E879F9', '#F472B6'];
@@ -135,6 +136,16 @@ const Hero = () => {
               className="text-gray-300 hover:text-instagram transition-colors p-2 bg-gray-800/50 rounded-full hover:bg-gray-800 backdrop-blur-sm"
             >
               <Instagram size={24} />
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              href="https://fiverr.com/myaries21"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-[#1DBF73] transition-colors p-2 bg-gray-800/50 rounded-full hover:bg-gray-800 backdrop-blur-sm"
+            >
+              <FiverrIcon size={24} />
             </motion.a>
             <motion.a
               whileHover={{ scale: 1.1 }}
