@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { motion } from 'framer-motion';
 import { useInView } from 'react-intersection-observer';
 import { Mail, MapPin, Phone } from 'lucide-react';
@@ -8,6 +8,30 @@ const Contact = () => {
     triggerOnce: true,
     threshold: 0.1
   });
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.id]: e.target.value
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    
+    // Format the WhatsApp message
+    const message = `Hello! I'm ${formData.name}.\nEmail: ${formData.email}\n\nMessage: ${formData.message}`;
+    const encodedMessage = encodeURIComponent(message);
+    
+    // Open WhatsApp with pre-filled message
+    window.open(`https://wa.me/923016415706?text=${encodedMessage}`, '_blank');
+  };
 
   return (
     <section className="py-20 bg-gray-900" id="contact">
@@ -67,7 +91,7 @@ const Contact = () => {
             </div>
 
             <div>
-              <form className="space-y-6">
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
                   <label htmlFor="name" className="block text-sm font-medium text-gray-300 mb-2">
                     Name
@@ -75,6 +99,9 @@ const Contact = () => {
                   <input
                     type="text"
                     id="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    required
                     className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 text-white transition-colors"
                     placeholder="Your name"
                   />
@@ -86,6 +113,9 @@ const Contact = () => {
                   <input
                     type="email"
                     id="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    required
                     className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 text-white transition-colors"
                     placeholder="your@email.com"
                   />
@@ -97,6 +127,9 @@ const Contact = () => {
                   <textarea
                     id="message"
                     rows={4}
+                    value={formData.message}
+                    onChange={handleInputChange}
+                    required
                     className="w-full px-4 py-2 bg-gray-800 border border-gray-700 rounded-lg focus:outline-none focus:border-blue-500 text-white transition-colors"
                     placeholder="Tell me about your project..."
                   ></textarea>
@@ -105,9 +138,10 @@ const Contact = () => {
                   type="submit"
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
-                  className="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-200 transform hover:shadow-lg hover:shadow-blue-500/25"
+                  className="w-full px-6 py-3 bg-gradient-to-r from-blue-500 to-blue-600 text-white font-semibold rounded-lg hover:from-blue-600 hover:to-blue-700 transition-all duration-200 transform hover:shadow-lg hover:shadow-blue-500/25 flex items-center justify-center gap-2"
                 >
-                  Let's Work Together
+                  <span>Let's Work Together</span>
+                  <span className="text-sm">(Opens in WhatsApp)</span>
                 </motion.button>
               </form>
             </div>
