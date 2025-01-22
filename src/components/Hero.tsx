@@ -1,8 +1,33 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { Facebook, Mail, ChevronDown, MessageCircle } from 'lucide-react';
+import { Facebook, Mail, ChevronDown, MessageCircle, Linkedin, Instagram } from 'lucide-react';
 
 const Hero = () => {
+  const colors = ['#60A5FA', '#818CF8', '#A78BFA', '#C084FC', '#E879F9', '#F472B6'];
+  
+  const FloatingLetter = ({ children }: { children: string }) => (
+    <motion.span
+      animate={{
+        y: [-2, 2, -2],
+        rotate: [-3, 3, -3],
+        color: colors,
+      }}
+      transition={{
+        duration: 2,
+        repeat: Infinity,
+        ease: "easeInOut",
+        color: {
+          duration: 2,
+          repeat: Infinity,
+          ease: "easeInOut",
+        }
+      }}
+      className="inline-block"
+    >
+      {children}
+    </motion.span>
+  );
+
   return (
     <div className="h-screen flex flex-col justify-center items-center relative bg-gradient-to-b from-gray-900 to-gray-800">
       <div className="container mx-auto px-4 flex flex-col items-center">
@@ -62,7 +87,7 @@ const Hero = () => {
             transition={{ duration: 0.8, delay: 0.4 }}
             className="text-xl text-gray-300 mb-8"
           >
-            Tech Savvy VA and Graphic Designer
+            Tech Savvy VA and <FloatingLetter>G</FloatingLetter>raphic <FloatingLetter>D</FloatingLetter>esigner
           </motion.p>
           
           <motion.div
@@ -90,6 +115,26 @@ const Hero = () => {
               className="text-gray-300 hover:text-facebook transition-colors p-2 bg-gray-800/50 rounded-full hover:bg-gray-800 backdrop-blur-sm"
             >
               <Facebook size={24} />
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              href="https://linkedin.com/in/muhammad-amjid-552ba3230"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-linkedin transition-colors p-2 bg-gray-800/50 rounded-full hover:bg-gray-800 backdrop-blur-sm"
+            >
+              <Linkedin size={24} />
+            </motion.a>
+            <motion.a
+              whileHover={{ scale: 1.1 }}
+              whileTap={{ scale: 0.9 }}
+              href="https://instagram.com/amjadali.21"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-300 hover:text-instagram transition-colors p-2 bg-gray-800/50 rounded-full hover:bg-gray-800 backdrop-blur-sm"
+            >
+              <Instagram size={24} />
             </motion.a>
             <motion.a
               whileHover={{ scale: 1.1 }}
