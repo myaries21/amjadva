@@ -54,8 +54,7 @@ const Hero = () => {
           {/* Profile image */}
           <div className="w-48 h-48 rounded-full overflow-hidden relative z-10 ring-4 ring-blue-500/50 shadow-lg shadow-blue-500/20">
             <img
-              src="https://scontent.fskt5-1.fna.fbcdn.net/v/t39.30808-6/470229026_9256668411022474_4341768212174257046_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeFEKdd-JRtnbJ9Yg6A6r40TP_z2HCgJ6WQ__PYcKAnpZN_AaeZcXPQzOmFVRsurjC2lMzTma0KSNZIWwOwigZs8&_nc_ohc=5BGy2z8PsaEQ7kNvgG-HA1W&_nc_zt=23&_nc_ht=scontent.fskt5-1.fna&_nc_gid=AjB0H1oqvnsqVxwLaVtlCqz&oh=00_AYCfoqfCMbZWykEpPju_Wcz86rbMJPB4pwxdHwRkgy-zXg&oe=679C6A5F"
-              className="w-full h-full object-cover"
+              src="https://drive.google.com/file/d/1tIotU5xoJ6gfO8sMP64z0Ua6KQstPfMO/view?usp=drive_link"
             />
           </div>
         </motion.div>
