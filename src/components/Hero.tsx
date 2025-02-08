@@ -52,12 +52,14 @@ const Hero = () => {
           </div>
           
           {/* Profile image */}
-          <div className="w-48 h-48 rounded-full overflow-hidden relative z-10 ring-4 ring-blue-500/50 shadow-lg shadow-blue-500/20">
-            <img
-              src="https://drive.google.com/file/d/1tIotU5xoJ6gfO8sMP64z0Ua6KQstPfMO/view?usp=drive_link"/>
-            /img>
-          </div>
-        </motion.div>
+         <div className="w-48 h-48 rounded-full overflow-hidden relative z-10 ring-4 ring-blue-500/50 shadow-lg shadow-blue-500/20">
+  <img
+    src="https://drive.google.com/uc?export=view&id=1tIotU5xoJ6gfO8sMP64z0Ua6KQstPfMO"
+    alt="Google Drive Image"
+    className="w-full h-full object-cover"
+  />
+</div>
+       </motion.div>
 
         <motion.div
           initial={{ opacity: 0, y: 20 }}
