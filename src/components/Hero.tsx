@@ -54,8 +54,8 @@ const Hero = () => {
           {/* Profile image */}
          <div className="w-48 h-48 rounded-full overflow-hidden relative z-10 ring-4 ring-blue-500/50 shadow-lg shadow-blue-500/20">
   <img
-    src="https://goto.now/YKINT"
-    alt="Amjad DP"
+    src="https://drive.google.com/file/d/1tIotU5xoJ6gfO8sMP64z0Ua6KQstPfMO/view?usp=sharing"
+    alt="Amjad"
     className="w-full h-full object-cover"
   />
 </div>
